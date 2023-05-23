@@ -1,15 +1,12 @@
-{{!--
-
-On every 3rd post, add a special .post-card-large class and load a large image
-For the rest, just output a smaller background image
-
---}}
 <style>
     .post-feed,
     .post-card {
         border: 5px solid black;
     }
     @media (min-width: 701px) {
+        .post-card {
+            flex: 1 1 33%;
+        }
         .post-feed,
         .post-card {
             border: 8px solid black;
@@ -18,11 +15,9 @@ For the rest, just output a smaller background image
     .post-card-content {
         box-shadow: 0 0 200px rgba(0,0,0,0.1) inset;
     }
-    .post-card-title {
-        text-shadow: 2px 2px 50px #000000;
-    }
 </style>
-<article class="post-card {{#has number="nth:3"}}post-card-large{{/has}} {{post_class}}">
+
+<article class="post-card {{post_class}}">
     <a class="post-card-link" href="{{url}}">
         {{#if feature_image}}
             <img
@@ -31,13 +26,13 @@ For the rest, just output a smaller background image
                         {{img_url feature_image size="l"}} 1200w,
                         {{img_url feature_image size="xl"}} 2000w,
                         {{img_url feature_image}}"
-                sizes="(min-width: 701px) {{#has number="nth:3"}}94vw{{else}}calc(94vw / 2){{/has}}, 88vw"
+                sizes="(min-width: 701px) calc(94vw / 3), 88vw"
                 src="{{img_url feature_image size="l"}}"
                 alt="{{title}}"
             >
         {{/if}}
-        <div class="post-card-content" style="box-shadow: 0 0 200px rgba(0,0,0,0.1) inset;">
-            <h2 class="post-card-title" style="text-shadow: 2px 2px 50px #000000;">{{title}}</h2>
+        <div class="post-card-content" style="">
+            <h2 class="post-card-title" style="">{{title}}</h2>
         </div>
     </a>
 </article>

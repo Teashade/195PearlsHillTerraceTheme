@@ -8,8 +8,6 @@ into the {body} of the default.hbs template --}}
     <p class="page-head-description">
         {{#if description}}
             {{description}}
-        {{else}}
-            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
         {{/if}}
     </p>
 </header>
@@ -17,6 +15,6 @@ into the {body} of the default.hbs template --}}
 
 <div class="post-feed gh-feed">
     {{#foreach posts}}
-        {{> "post-card"}}
+        {{> "post-card-symmetric"}}
     {{/foreach}}
 </div>
