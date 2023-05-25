@@ -1,9 +1,37 @@
 {{!< default}}
-
+<style>
+    .post-tags {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .post-tag {
+        padding: 5px 15px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.01em;
+        background-color: black;
+        border-radius: 16px;
+        margin: 0 8px;
+    }
+    .post-tag-black {
+        background-color: black;
+    }
+    .post-tag-gray {
+        background-color: gray;
+    }    
+</style>
 {{#post}}
 <article class="post-content {{post_class}}">
-
     <header class="post-content-header gh-canvas">
+            <div class="post-tags">
+                {{#primary_tag}}
+                    <a class="post-tag post-tag-black" href="{{url}}" title="{{name}}">{{name}}</a>
+                {{/primary_tag}}
+                {{#tags.[1]}}
+                    <a class="post-tag post-tag-gray" href="{{url}}" title="{{name}}">{{name}}</a>
+                {{/tags.[1]}}
+            </div>
         <h1 class="post-content-title">{{title}}</h1>
         {{#if custom_excerpt}}
             <p class="post-content-excerpt">{{custom_excerpt}}</p>
