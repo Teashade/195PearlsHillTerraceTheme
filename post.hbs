@@ -24,17 +24,17 @@
 {{#post}}
 <article class="post-content {{post_class}}">
     <header class="post-content-header gh-canvas">
-            <div class="post-tags">
-                {{#primary_tag}}
-                    <a class="post-tag post-tag-black" href="{{url}}" title="{{name}}">{{name}}</a>
-                {{/primary_tag}}
-                {{#tags.[1]}}
-                    <a class="post-tag post-tag-gray" href="{{url}}" title="{{name}}">{{name}}</a>
-                {{/tags.[1]}}
-                {{#tags.[2]}}
-                    <a class="post-tag post-tag-gray" href="{{url}}" title="{{name}}">{{name}}</a>
-                {{/tags.[2]}}
-            </div>
+        <div class="post-tags">
+            {{#primary_tag}}
+                <a class="post-tag post-tag-black" href="{{url}}" title="{{name}}">{{name}}</a>
+            {{/primary_tag}}
+            {{#tags.[1]}}
+                <a class="post-tag post-tag-gray" href="{{url}}" title="{{name}}">{{name}}</a>
+            {{/tags.[1]}}
+            {{#tags.[2]}}
+                <a class="post-tag post-tag-gray" href="{{url}}" title="{{name}}">{{name}}</a>
+            {{/tags.[2]}}
+        </div>
         <h1 class="post-content-title">{{title}}</h1>
         {{#if custom_excerpt}}
             <p class="post-content-excerpt">{{custom_excerpt}}</p>

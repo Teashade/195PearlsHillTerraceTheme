@@ -1,0 +1,78 @@
+.gh-head-menu .nav-facebook a,
+.gh-head-menu .nav-instagram a,
+.gh-head-menu .nav-tiktok a,
+.gh-head-menu .nav-youtube a {
+    font-size: 0 !important;
+}
+
+.gh-head-menu .nav-facebook a::before,
+.gh-head-menu .nav-instagram a::before,
+.gh-head-menu .nav-tiktok a::before,
+.gh-head-menu .nav-youtube a::before {
+    font-family: "Font Awesome 6 Brands";
+    display: inline-block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.gh-head-menu .nav-facebook a::before {content: "\f09a"}
+.gh-head-menu .nav-instagram a::before {content: "\f16d"}
+.gh-head-menu .nav-tiktok a::before {content: "\e07b"}
+.gh-head-menu .nav-youtube a::before {content: "\f167"}
+
+.post-card-content {
+    box-shadow: 0 0 200px rgba(0,0,0,0.1) inset;
+}
+.post-card-title {
+    text-shadow: 2px 2px 50px #000000;
+}
+.post-feed.instagram-feed {
+    border: none;
+}
+.instagram-feed > .post-card {
+    height: 17.5vw;
+    border-radius: 30px;
+    border: 8px solid white;
+}
+.instagram-feed .post-card-title {
+    font-size: 1.0rem;
+}
+
+@media (max-width: 767px) {
+    .post-feed,
+    .post-card {
+        border: 3px solid black;
+    }
+    .symmetric-feed > .post-card {
+        flex: 1 1 50%;
+    }
+    .symmetric-feed .post-card-title {
+        font-size: 2.0rem;
+        max-width: 80%;
+    }
+    .instagram-feed > .post-card {
+        flex: 1 1 50%;
+    }
+    .instagram-feed > .post-card {
+        height: 35vw;
+        border-radius: 30px;
+        border: 4px solid white;
+    }
+}
+
+@media (min-width: 768px) {
+    .symmetric-feed > .post-card {
+        flex: 1 1 33%;
+    }
+    .instagram-feed > .post-card {
+        flex: 1 1 20%;
+    }
+    .post-feed,
+    .post-card {
+        border: 6px solid black;
+    }
+}
