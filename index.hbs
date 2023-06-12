@@ -40,20 +40,6 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/is}}
 
-{{#get "posts" filter="primary_tag:instagram" limit="10"}}
-    {{#if posts}}
-        <h3 class="post-content-title">Social Happenings @195pearlshillterrace<h3>
-        <div class="post-feed gh-feed instagram-feed">
-            {{#foreach posts}}
-                {{> "post-card-instagram"}}
-            {{/foreach}}
-        </div>
-        </br>
-        </br>
-        </br>
-    {{/if}}
-{{/get}}
-
 {{#get "posts" filter="featured:true" limit="3"}}
     {{#if posts}}
         <h3 class="post-content-title">Featured</h3>
@@ -74,3 +60,17 @@ into the {body} of the default.hbs template --}}
         {{> "post-card"}}
     {{/foreach}}
 </div>
+
+{{#get "posts" filter="primary_tag:instagram" limit="10"}}
+    {{#if posts}}
+        </br>
+        </br>
+        </br>
+        <h3 class="post-content-title">What's on our Instagram @195pearlshillterrace<h3>
+        <div class="post-feed gh-feed instagram-feed">
+            {{#foreach posts}}
+                {{> "post-card-instagram"}}
+            {{/foreach}}
+        </div>
+    {{/if}}
+{{/get}}
