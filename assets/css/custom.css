@@ -82,12 +82,6 @@
     width: 100%;
     border: 2px solid black;
 }
-.post-line-left {
-    margin-left: 1rem;
-}
-.post-line-right {
-    margin-right: 1rem;
-}
 .post-line:hover .post-line-title {
     opacity: 0.8;
 }
@@ -98,6 +92,12 @@
 .post-line a {
     margin: 0 0.5rem;
     min-width: 60px;
+}
+.post-line-left {
+    margin-left: 1rem;
+}
+.post-line-right {
+    margin-right: 1rem;
 }
 .post-line-author-image {
     display: flex;
