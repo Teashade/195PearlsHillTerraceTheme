@@ -83,7 +83,7 @@ into the {body} of the default.hbs template --}}
                 margin-right: 2.5rem;
             }
             .post-line div {
-                margin: 0 1rem;
+                margin: 0 0.5rem;
             }
             .post-line-author-image {
                 display: flex;
@@ -98,7 +98,7 @@ into the {body} of the default.hbs template --}}
             .post-line-author-name {
                 display: flex;
                 min-width: 45px;
-                margin-right: 1.5rem;
+                padding-right: 1.5rem;
                 font-size: 1.1rem;
                 font-weight: 800;
                 color: var(--brand-color);
@@ -116,35 +116,11 @@ into the {body} of the default.hbs template --}}
                 letter-spacing: 0;
                 white-space: nowrap;
             }
-            .post-line-right {
-                display: flex;
-                align-items: center;
-                transition: margin 0.2s var(--animation-base);
-            }
-            .post-line-read-more {
-                font-size: 1.4rem;
-                color: var(--secondary-text-color);
-                white-space: nowrap;
-            }
-            .icon {
-                width: 20px;
-                height: 20px;
-            }
-            .post-line-icon {
-                position: absolute;
-                right: 0;
-                width: 16px;
-                height: 16px;
-                color: var(--secondary-text-color);
-                transition: transform 0.2s var(--animation-base);
-                transform: translateX(2rem);
-            .post-line-u-permalink {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 50;
+            @media (max-width: 701px) {
+                .post-line-author-image,
+                .post-line-author-image {
+                    display: none;
+                }
             }
         </style>
         <div class="post-feed gh-feed post-line-feed">
