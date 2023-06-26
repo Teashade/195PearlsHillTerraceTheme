@@ -1,0 +1,21 @@
+<article class="post-line {{visibility}} {{post_class}}">
+
+    {{#primary_author}}
+    <div class="post-line-author-image">
+        {{#if profile_image}}
+            <img class="post-line-profile-image", src="{{img_url profile_image}}" alt="{{name}}'s Picture" />
+        {{/if}}
+    </div>
+    <div class="post-line-author-name">
+        <a href="{{url}}">{{name}}</a>
+    </div>
+    {{/primary_author}}
+    
+    <a href="{{url}}" class="post-line-title">
+        <h5>{{title}}</h5>
+    </a>
+    <a href="{{url}}" class="post-line-right">
+        {{> "icons/chevron-right"}}
+    </a>
+    
+</article>

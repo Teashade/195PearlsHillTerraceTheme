@@ -55,6 +55,103 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/get}}
 
+{{#get "posts" filter="primary_tag:free-trials" limit="20" include="authors"}}
+    {{#if posts}}
+        <h3 class="post-content-title">Free Trials / Activities</h3>
+        </br>
+        <style>
+            .post-line-feed {
+                max-width: 768px;
+                margin: 0 auto;
+            }
+            .post-line {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 1.5rem 0;
+                overflow: hidden;
+                line-height: 1;
+                width: 100%;
+            }
+            .post-line:hover .post-line-title {
+                opacity: 0.8;
+            }
+            .post-line:hover .post-line-right {
+                margin-right: 1.6rem;
+            }
+            .post-line-author-image {
+                display: flex;
+            }
+            .post-line-author-image img {
+                width: 60px;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                border-radius: 100%;
+                margin: 0 auto;
+            }
+            .post-line-author-name {
+                display: flex;
+                min-width: 45px;
+                margin-right: 1.5rem;
+                font-size: 1.1rem;
+                font-weight: 800;
+                color: var(--brand-color);
+                white-space: nowrap;
+            }
+            .post-line-title {
+                flex-grow: 1;
+                padding-right: 1rem;
+                margin-bottom: 0;
+                overflow: hidden;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 1.3;
+                text-overflow: ellipsis;
+                letter-spacing: 0;
+                white-space: nowrap;
+            }
+            .post-line-right {
+                display: flex;
+                align-items: center;
+                transition: margin 0.2s var(--animation-base);
+            }
+            .post-line-read-more {
+                font-size: 1.4rem;
+                color: var(--secondary-text-color);
+                white-space: nowrap;
+            }
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+            .post-line-icon {
+                position: absolute;
+                right: 0;
+                width: 16px;
+                height: 16px;
+                color: var(--secondary-text-color);
+                transition: transform 0.2s var(--animation-base);
+                transform: translateX(2rem);
+            .post-line-u-permalink {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 50;
+            }
+        </style>
+        <div class="post-feed gh-feed post-line-feed">
+            {{#foreach posts}}
+                {{> "post-line"}}
+            {{/foreach}}
+        </div>
+        </br>
+        </br>
+        </br>
+    {{/if}}
+{{/get}}
+
 <div class="post-feed gh-feed">
     {{#foreach posts}}
         {{> "post-card"}}
@@ -66,7 +163,7 @@ into the {body} of the default.hbs template --}}
         </br>
         </br>
         </br>
-        <h3 class="post-content-title">What's on our Instagram @195pearlshillterrace<h3>
+        <h3 class="post-content-title">What's On Our Instagram @195pearlshillterrace<h3>
         <div class="post-feed gh-feed instagram-feed">
             {{#foreach posts}}
                 {{> "post-card-instagram"}}
