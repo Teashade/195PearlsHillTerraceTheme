@@ -47,6 +47,11 @@
     .post-card {
         border: 3px solid black;
     }
+    .post-line-feed {
+        border: 4px solid black;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+    }
     .symmetric-feed .post-card {
         flex: 1 1 50%;
     }
@@ -77,8 +82,11 @@
     width: 100%;
     border: 2px solid black;
 }
+.post-line-left {
+    margin-left: 1rem;
+}
 .post-line-right {
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 .post-line:hover .post-line-title {
     opacity: 0.8;
@@ -118,6 +126,7 @@
     text-overflow: ellipsis;
     letter-spacing: 0;
     white-space: nowrap;
+    text-transform: capitalize;
 }
 .post-line-title:hover {
     color: #ff00ce;
@@ -132,6 +141,11 @@
     .post-feed,
     .post-card {
         border: 6px solid black;
+    }
+    .post-line-feed {
+        border: 4px solid black;
+        border-top: 2px solid black;
+        border-left: 2px solid black;
     }
     .post-line-feed {
         max-width: 1200px;
