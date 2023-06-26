@@ -94,10 +94,10 @@
     min-width: 60px;
 }
 .post-line-left {
-    margin-left: 1rem;
+    margin-left: 1rem !important;
 }
 .post-line-right {
-    margin-right: 1rem;
+    margin-right: 1rem !important;
 }
 .post-line-author-image {
     display: flex;
