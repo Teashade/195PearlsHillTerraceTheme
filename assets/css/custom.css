@@ -80,6 +80,7 @@
 .post-line {
     position: relative;
     display: flex;
+    flex: 1 1 50%;
     align-items: center;
     min-height: 6rem;
     overflow: hidden;
@@ -160,6 +161,9 @@
 
     .post-line-feed {
         scale: 1.1;
+    }
+    .post-line {
+        flex: 1 1 100%;
     }
     .gh-search {
         display: none;

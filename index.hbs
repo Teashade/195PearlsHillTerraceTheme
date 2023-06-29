@@ -59,7 +59,7 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/get}}
 
-{{#get "posts" filter="tag:free-trials" limit="10" include="authors"}}
+{{#get "posts" filter="tag:free-trials" limit="12" include="authors"}}
     {{#if posts}}
         {{!-- <a href="/free-trials"> --}}
         <h3 class="post-content-title">Free / Trials Noticeboard</h3>
@@ -76,7 +76,7 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/get}}
 
-{{#get "posts" filter="tag:promotions-pop-ups" limit="10" include="authors"}}
+{{#get "posts" filter="tag:promotions-pop-ups" limit="12" include="authors"}}
     {{#if posts}}
         {{!-- <a href="/promotions-pop-ups"> --}}
         <h3 class="post-content-title">Promotions / Pop-ups Noticeboard</h3>
