@@ -3,12 +3,14 @@
     {{#primary_author}}
     <div class="post-line-author-image post-line-left">
         {{#if profile_image}}
-            <img class="post-line-profile-image", src="{{img_url profile_image}}" alt="{{name}}'s Picture" />
+            <img class="post-line-profile-image", src="{{img_url profile_image size="xs"}}" alt="{{name}}'s Picture" />
         {{/if}}
     </div>
-    <div class="post-line-author-name">{{name}} : </div>
     {{/primary_author}}
     <a href="{{url}}" class="post-line-title">
+        {{#primary_author}}
+            <span class="post-line-author-name">{{name}}</span>
+        {{/primary_author}}
         <h6 class="post-line-title">{{title}}</h6>
     </a>
     

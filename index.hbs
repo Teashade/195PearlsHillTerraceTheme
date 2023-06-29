@@ -24,6 +24,10 @@ into the {body} of the default.hbs template --}}
             display: none;
         }
     }
+    .post-feed {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
 </style>
 {{#is "home"}}
     {{#if @site.description}}
@@ -55,11 +59,11 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/get}}
 
-{{#get "posts" filter="primary_tag:free-trials" limit="20" include="authors"}}
+{{#get "posts" filter="tag:free-trials" limit="10" include="authors"}}
     {{#if posts}}
-        <a href="/free-trials">
-            <h3 class="post-content-title">Free Trials / Activities</h3>
-        </a>
+        {{!-- <a href="/free-trials"> --}}
+        <h3 class="post-content-title">Free / Trials Noticeboard</h3>
+        {{!-- </a> --}}
         </br>
         <div class="post-feed gh-feed post-line-feed">
             {{#foreach posts}}
@@ -72,11 +76,11 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/get}}
 
-{{#get "posts" filter="primary_tag:promotions-pop-ups" limit="20" include="authors"}}
+{{#get "posts" filter="tag:promotions-pop-ups" limit="10" include="authors"}}
     {{#if posts}}
-        <a href="/promotions-pop-ups">
-            <h3 class="post-content-title">Promotions / Pop-ups</h3>
-        </a>
+        {{!-- <a href="/promotions-pop-ups"> --}}
+        <h3 class="post-content-title">Promotions / Pop-ups Noticeboard</h3>
+        {{!-- </a> --}}
         </br>
         <div class="post-feed gh-feed post-line-feed">
             {{#foreach posts}}
@@ -89,13 +93,15 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/get}}
 
-<h3 class="post-content-title">News / Articles</h3>
-</br>
-<div class="post-feed gh-feed">
-    {{#foreach posts}}
-        {{> "post-card"}}
-    {{/foreach}}
-</div>
+{{#get "posts" filter="tag:[happenings, editorial, information]" limit="6" include="authors"}}
+    <h3 class="post-content-title">News / Articles</h3>
+    </br>
+    <div class="post-feed gh-feed">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </div>
+{{/get}}
 
 {{#get "posts" filter="primary_tag:instagram" limit="10"}}
     {{#if posts}}

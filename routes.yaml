@@ -1,0 +1,41 @@
+routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: tag:[happenings, editorial, information]
+  /free-trials/:
+    permalink: /{slug}/
+    template: tag
+    filter: tag:free-trials
+    data: tag.free-trials
+    order: published_at desc
+  /promotions-pop-ups/:
+    permalink: /{slug}/
+    template: tag
+    filter: tag:promotions-pop-ups
+    data: tag.promotions-pop-ups
+    order: published_at desc
+  /level-1/:
+    permalink: /{slug}/
+    template: tag
+    filter: tag:level-1
+    data: tag.level-1
+    order: slug asc
+  /level-2/:
+    permalink: /{slug}/
+    template: tag
+    filter: tag:level-2
+    data: tag.level-2
+    order: slug asc
+  /level-3/:
+    permalink: /{slug}/
+    template: tag
+    filter: tag:level-3
+    data: tag.level-3
+    order: slug asc
+
+taxonomies:
+  tag: /{slug}/
+  author: /author/{slug}/
