@@ -23,6 +23,9 @@ into the {body} of the default.hbs template --}}
         .directory-span {
             display: none;
         }
+        #stories {
+            scale: 1.15;
+        }
     }
     .post-feed {
         max-width: 1440px;
@@ -44,6 +47,44 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/is}}
 
+<h3 class="post-content-title">Stories *Beta</h3>
+</br>
+<div id="stories" style="text-align:center;"></div>
+</br>
+</br>
+</br>
+<script src="https://195pearlshillterrace-com.b-cdn.net/instagram/zuck-stories.js"></script>
+<script>
+    const timestamp = function () {
+        let timeIndex = 1678166046264 / 1000;
+        let random = Math.floor(Math.random() * 1000);
+
+        return Math.round(timeIndex - random);
+    };
+    var currentSkin = {
+        name: 'Snapgram',
+            params: {
+            avatars: true,
+            list: false,
+            autoFullScreen: false,
+            cubeEffect: true,
+            paginationArrows: true
+        }
+    };
+    var stories = window.Zuck(document.querySelector('#stories'), {
+    backNative: true,
+    previousTap: true,
+    skin: currentSkin['name'],
+    autoFullScreen: currentSkin['params']['autoFullScreen'],
+    avatars: currentSkin['params']['avatars'],
+    paginationArrows: currentSkin['params']['paginationArrows'],
+    list: currentSkin['params']['list'],
+    cubeEffect: currentSkin['params']['cubeEffect'],
+    localStorage: true,
+    stories: zuckStories
+    });
+</script>
+
 {{#get "posts" filter="featured:true" limit="3"}}
     {{#if posts}}
         <h3 class="post-content-title">Featured</h3>
@@ -59,27 +100,10 @@ into the {body} of the default.hbs template --}}
     {{/if}}
 {{/get}}
 
-{{#get "posts" filter="tag:free-trials" limit="12" include="authors"}}
+{{#get "posts" filter="tag:noticeboard" limit="20" include="authors"}}
     {{#if posts}}
-        {{!-- <a href="/free-trials"> --}}
-        <h3 class="post-content-title">Free / Trials Noticeboard</h3>
-        {{!-- </a> --}}
-        </br>
-        <div class="post-feed gh-feed post-line-feed">
-            {{#foreach posts}}
-                {{> "post-line"}}
-            {{/foreach}}
-        </div>
-        </br>
-        </br>
-        </br>
-    {{/if}}
-{{/get}}
-
-{{#get "posts" filter="tag:promotions-pop-ups" limit="12" include="authors"}}
-    {{#if posts}}
-        {{!-- <a href="/promotions-pop-ups"> --}}
-        <h3 class="post-content-title">Promotions / Pop-ups Noticeboard</h3>
+        {{!-- <a href="/noticeboard"> --}}
+        <h3 class="post-content-title">Noticeboard</h3>
         {{!-- </a> --}}
         </br>
         <div class="post-feed gh-feed post-line-feed">

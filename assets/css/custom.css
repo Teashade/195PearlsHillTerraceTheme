@@ -190,3 +190,8 @@
     font-size: 1.6rem;
     font-weight: 700;
 }
+
+#zuck-modal-content .story-viewer .head .right .close,
+#zuck-modal-content .story-viewer .head .back {
+    color: #ff00ce;
+}
