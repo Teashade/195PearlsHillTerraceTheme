@@ -49,8 +49,8 @@ into the {body} of the default.hbs template --}}
 
 <h3 class="post-content-title">Stories *Beta</h3>
 </br>
-<div id="stories" style="text-align:center;"></div>
 </br>
+<div id="stories" style="text-align:center;"></div>
 </br>
 </br>
 </br>
@@ -68,12 +68,12 @@ into the {body} of the default.hbs template --}}
     {{#if posts}}
         <h3 class="post-content-title">Featured</h3>
         </br>
+        </br>
         <div class="post-feed gh-feed featured-feed">
             {{#foreach posts}}
                 {{> "post-card-symmetric"}}
             {{/foreach}}
         </div>
-        </br>
         </br>
         </br>
         </br>
@@ -87,12 +87,12 @@ into the {body} of the default.hbs template --}}
         <h3 class="post-content-title">Noticeboard</h3>
         {{!-- </a> --}}
         </br>
+        </br>
         <div class="post-feed gh-feed post-line-feed">
             {{#foreach posts}}
                 {{> "post-line"}}
             {{/foreach}}
         </div>
-        </br>
         </br>
         </br>
         </br>
@@ -103,6 +103,7 @@ into the {body} of the default.hbs template --}}
 {{#get "posts" filter="tag:[happenings, editorial, information]" limit="6" include="authors"}}
     <h3 class="post-content-title">News / Articles</h3>
     </br>
+    </br>
     <div class="post-feed gh-feed">
         {{#foreach posts}}
             {{> "post-card"}}
@@ -112,7 +113,6 @@ into the {body} of the default.hbs template --}}
 
 {{#get "posts" filter="primary_tag:instagram" limit="10"}}
     {{#if posts}}
-        </br>
         </br>
         </br>
         </br>
