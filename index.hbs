@@ -19,12 +19,12 @@ into the {body} of the default.hbs template --}}
     .featured-feed {
         border-color: #00CEFF;
     }
+    #stories {
+        scale: 1.15;
+    }
     @media (max-width: 701px) {
         .directory-span {
             display: none;
-        }
-        #stories {
-            scale: 1.15;
         }
     }
     .post-feed {
@@ -53,38 +53,15 @@ into the {body} of the default.hbs template --}}
 </br>
 </br>
 </br>
-<script src="https://195pearlshillterrace-com.b-cdn.net/instagram/zuck-stories.js"></script>
+<script id="storiesScript"></script>
 <script>
     const timestamp = function () {
         let timeIndex = 1678166046264 / 1000;
         let random = Math.floor(Math.random() * 1000);
-
         return Math.round(timeIndex - random);
     };
-    var currentSkin = {
-        name: 'Snapgram',
-            params: {
-            avatars: true,
-            list: false,
-            autoFullScreen: false,
-            cubeEffect: true,
-            paginationArrows: true
-        }
-    };
-    var stories = window.Zuck(document.querySelector('#stories'), {
-    backNative: true,
-    previousTap: true,
-    skin: currentSkin['name'],
-    autoFullScreen: currentSkin['params']['autoFullScreen'],
-    avatars: currentSkin['params']['avatars'],
-    paginationArrows: currentSkin['params']['paginationArrows'],
-    list: currentSkin['params']['list'],
-    cubeEffect: currentSkin['params']['cubeEffect'],
-    localStorage: true,
-    stories: zuckStories
-    });
+    document.getElementById('storiesScript').src = "https://195pearlshillterrace-com.b-cdn.net/instagram/zuck-stories.js?v="+timestamp();
 </script>
-
 {{#get "posts" filter="featured:true" limit="3"}}
     {{#if posts}}
         <h3 class="post-content-title">Featured</h3>
